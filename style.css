@@ -1,62 +1,138 @@
 *{
     box-sizing: border-box;
 }
+
+
 @font-face{
     font-family: "Google-fuentes";
     src: url("fuentes/DancingScript-SemiBold.ttf");
 }
+
 body{
-    background-color: #fefae0; 
     margin: 0;
     font-family: Verdana, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
-header{
+.encabezado{
     background: rgb(250,237,205);
-background: radial-gradient(circle, rgba(250,237,205,1) 0%, rgba(212,163,115,1) 100%);
+    background: linear-gradient(180deg, rgba(250,237,205,1) 0%, rgba(249,246,240,1) 100%);
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-  align-items: center;
-  position: fixed;
-  top: 0;
-    
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 img{
-    width: 150px;
-    height: 150px;
+    width: max(100px, 12vw);
     border-radius: 100%;
     padding: 20px;
 }
 
-h2{
+h1{
     font-family: "Google-fuentes"; 
     text-align: center;
-    
+    font-size: min(5vw, 2rem);   
 }
 
+nav{
+    width: 50%;
+    max-width: 300px;
+    height: 50%;
+  }
+  
 
 nav > ul{
-    padding: 20px;
-    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-inline-start: 0px;
     margin-block: 0;
+    font-size: 0.8rem;
 }
 
 nav > ul > li {
-    margin: 2px;
-    padding: 5px;
     display: block;
+    border-bottom: 2px solid #f7e5b7;
+    padding: 5px;
+    border-radius: 10px;
   }
 
-  
+ 
   a {
     text-decoration: none;
     color: #000000;
 }
 
   nav > ul > li > a:hover {
-    background-color: #bc6c25;
+    background-color: #eeb37f;
     color: #fefae0;
+    border-radius: 10px;
+    padding: 10px;
  }
 
+main{
+    width: 100%;
+    background: rgb(250,237,205);
+    background: linear-gradient(180deg, rgba(250,237,205,1) 0%, rgba(249,246,240,1) 100%);
+ }
+
+.main__section{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.article--parrafo{
+    text-align: center;
+    font-size: min(5vw, 1.5rem);
+    font-family: cursive;
+ }
+
+ .fotoPrincipal{
+    width: max(150px, 50vw);
+    border: 0.5px solid #f7e5b7;
+    margin-top: 10%;
+ } 
+
+ .main__section2{
+    text-align: center;
+    font-size: min(5vw, 1.5rem);
+    font-family: cursive;
+    margin-top: 80px;
+ }
+
+@media all and (max-width: 700px) {
+
+  .encabezado{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1{
+    font-size: min(10vw, 1.5rem);
+  }
+
+  .navBar{
+    flex-flow: column wrap;
+    padding: 10px;
+    border-top: 2px solid #f7e5b7; 
+  }
+
+  .main__section{
+    margin-top: 300px;
+  }
+}
